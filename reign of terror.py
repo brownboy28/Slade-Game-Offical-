@@ -1,19 +1,16 @@
 import time
 hisc = open("highscore.txt", "a+")
-def countdown(n) :
-    while n > 0:
-        print (n)
-        n = n - 1
-        if n == 0:
-            print('Slade got you')
+def countdown(no1) :
+    while no1 > 0:
+        print (no1)
+        time.sleep(1)
+        no1 = no1 - 1
+no = 0
+
 
 count = 0
 user = input("What's your username?")
 start = input("Welcome to Reign of Terror \n 1-Start Game 2-Highscores")
-
-if start != "1" or "2":
-    print("sorry invalid option")
-    quit()
 
 if start == "2":
     hisc = open("highscore.txt", "r")
@@ -23,9 +20,7 @@ if start == "2":
 if start == "1":
         c1 = input("It's your first day at St. Georges, what subjects do you choose?"
                    " \n 1-Maths 2-English ")
-        if c1 != "1" or "2":
-            print("invailid option")
-        
+
         if c1 == "1":
             print("You walk into Maths class, the teacher introduces you to the students.")
             time.sleep(2)
@@ -47,7 +42,8 @@ if start == "1":
                             print("You ace the test and get called out on cheating")
                     else:
                         print("Slade got you\n GAME OVER", count, "points")
-                    hisc.write(str(user + "-" + str(count) + "\n"))
+                        hisc.write(str(user + "-" + str(count) + "\n"))
+                        quit()
                 if c3a == "2":
                     count = count + 20
                     print("Slade got you\n GAME OVER", count, "points")
@@ -64,6 +60,7 @@ if start == "1":
                 print("You say you were asking the time and get away with it, \n  +50 points ")
                 count = count +50
                 time.sleep(1)
+
                 c3a = input("It's break time,\n where do you go?"
                            "1-Libary 2-Playground")
             else:
@@ -88,6 +85,22 @@ if c2b == "2":
             if a == "Derek Slade":
                 print("You threw yourself through the window and escaped,\n +100 points")
                 count = count + 100
+                time.sleep(1)
+                print("Slade followed you and is chasing, \n Press enter to run, you have 5 seconds")
+                no = 0
+                print("Start pressing")
+                countdown(5)
+
+                while no < 15 and :
+                    input("")
+                    no = no + 1
+
+                   # else:
+                       # print("Slade got you\n GAME OVER", count, "points")
+                       # hisc.write(str(user + "-" + str(count) + "\n"))
+                       # quit()
+
+
             else: print("Slade got you\n GAME OVER",count,"points")
             hisc.write(str(user + "-" + str(count) + "\n"))
             quit()
