@@ -1,10 +1,13 @@
 import time
 hisc = open("highscore.txt", "a+")
 def countdown(no1) :
-    while no1 > 0:
+    while no1 > 0 and timer_stop = False:
         print (no1)
         time.sleep(1)
         no1 = no1 - 1
+        
+    if no1 == "0":
+        game_stop = True
 no = 0
 
 
@@ -89,16 +92,21 @@ if c2b == "2":
                 print("Slade followed you and is chasing, \n Press enter to run, you have 5 seconds")
                 no = 0
                 print("Start pressing")
+                timer_stop = False
+                game_stop = False
                 countdown(5)
-
-                while no < 15 and :
+                while no < 15:
                     input("")
                     no = no + 1
+                    
+                if no >= "15"and game_stop = False:
+                    timer_stop = True
+                    Print("blank text")
 
-                   # else:
-                       # print("Slade got you\n GAME OVER", count, "points")
-                       # hisc.write(str(user + "-" + str(count) + "\n"))
-                       # quit()
+                if game_stop == True:
+                       print("Slade got you\n GAME OVER", count, "points")
+                       hisc.write(str(user + "-" + str(count) + "\n"))
+                       quit()
 
 
             else: print("Slade got you\n GAME OVER",count,"points")
