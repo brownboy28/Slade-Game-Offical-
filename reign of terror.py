@@ -1,5 +1,11 @@
 import time
 hisc = open("highscore.txt", "a+")
+def countdown(n) :
+    while n > 0:
+        print (n)
+        n = n - 1
+        if n == 0:
+            print('Slade got you')
 
 count = 0
 user = input("What's your username?")
